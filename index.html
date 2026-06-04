@@ -1,91 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Juho Lahtinen</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="header-inner">
-      <img src="assets/profile.jpg" alt="Juho Lahtinen" class="profile-pic"/>
-      <div>
-        <h1>Juho Lahtinen</h1>
-        <p class="subtitle">Automation & Robotics Student · BioIT & Industrial Engineering</p>
-        <p class="location">📍 Espoo, Finland</p>
-      </div>
-    </div>
-    <nav>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">JL<span class="nav-logo-dim">.fi</span></div>
+    <div class="nav-links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">Available for internships &amp; projects</div>
+      <h1>
+        <span class="name-dim">Juho</span><br>
+        Lahtinen<span class="cursor"></span>
+      </h1>
+      <p class="hero-desc">
+        Automation &amp; Robotics engineer in training.
+        Interested in the crossroads of intelligent systems,
+        biomedical applications, and industrial automation.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">View my work</a>
+        <a href="#contact" class="btn-ghost">Get in touch</a>
+      </div>
+    </div>
+  </div>
 
   <!-- ABOUT -->
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm an Automation and Robotics engineering student at Aalto University, with minors in 
-      BioIT and Industrial Engineering. Strong interest in
-      problem-solving. Adventurous and curious by
-      nature, with a practical mindset and a passion for
-      learning through real-world challenges.
-      
-    </p>
+    <div class="section-label">01 — About</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2>Engineering meets biology.</h2>
+        <p>I'm an Automation and Robotics student based in Lahti, Finland, with minors in BioIT and Industrial Engineering.</p>
+        <p>My focus lies at the intersection of robotics, bioinformatics, and medical technology — particularly cancer detection and treatment automation systems.</p>
+        <p>Outside of engineering I'm into active sports and the science of energy metabolism.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Fields of study</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Programming languages</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">FI</div>
+          <div class="stat-label">Based in Finland</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- SKILLS -->
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">💻 Python</div>
-      <div class="skill-card">⚙️ C / C++</div>
-      <div class="skill-card">📊 Scala</div>
-      <div class="skill-card">🤖 CodeSys</div>
-      <div class="skill-card">🔬 Problem-solving</div>
-      <div class="skill-card">🏭 Industrial Engineering</div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education">
-    <h2>Education</h2>
-    <div class="edu-item">
-      <h3>B.Sc. Automation and Robotics</h3>
-      <p class="edu-sub">Aalto University · 2023 – Present</p>
-      <p>Minors in BioIT and Industrial Engineering</p>
+    <div class="section-label">02 — Skills</div>
+    <h2>What I work with.</h2>
+    <div class="skills-list">
+      <div class="skill-item"><div class="skill-name">Python</div><div class="skill-type">Language</div></div>
+      <div class="skill-item"><div class="skill-name">C / C++</div><div class="skill-type">Language</div></div>
+      <div class="skill-item"><div class="skill-name">Scala</div><div class="skill-type">Language</div></div>
+      <div class="skill-item"><div class="skill-name">CodeSys</div><div class="skill-type">PLC / Automation</div></div>
+      <div class="skill-item"><div class="skill-name">Eclipse IDE</div><div class="skill-type">Environment</div></div>
+      <div class="skill-item"><div class="skill-name">Robotics</div><div class="skill-type">Domain</div></div>
+      <div class="skill-item"><div class="skill-name">Bioinformatics</div><div class="skill-type">Domain</div></div>
+      <div class="skill-item"><div class="skill-name">Industrial Eng.</div><div class="skill-type">Domain</div></div>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Project Name TODO</h3>
-      <p>Short description of what you built and what technologies you used.</p>
-    </div>
-    <div class="project-card">
-      <h3>Project Name TODO</h3>
-      <p>Short description of what you built and what technologies you used.</p>
+    <div class="section-label">03 — Projects</div>
+    <h2>Things I've built.</h2>
+    <div class="projects-grid">
+      <div class="project-item">
+        <div>
+          <div class="project-num">001</div>
+          <div class="project-name">Your Project Name</div>
+          <div class="project-desc">Short description of what you built, what problem it solved, and what you learned from it.</div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Robotics</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </div>
+      <div class="project-item">
+        <div>
+          <div class="project-num">002</div>
+          <div class="project-name">Your Project Name</div>
+          <div class="project-desc">Short description of what you built, what problem it solved, and what you learned from it.</div>
+          <div class="project-tags">
+            <span class="tag">C++</span>
+            <span class="tag">Automation</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:juholahtinen11@gmail.com">juholahtinen11@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/juho-lahtinen-913798351/" target="_blank">linkedin.com/in/juho-lahtinen-913798351/</a></p>
-    <p>GitHub: <a href="https://github.com/lahtinen-juho" target="_blank">github.com/lahtinen-juho</a></p>
+    <div class="section-label">04 — Contact</div>
+    <div class="contact-inner">
+      <div class="contact-text">
+        <h2>Let's work together.</h2>
+        <p>Open to internship opportunities, research collaborations, and interesting projects in automation, robotics, or biomedical engineering.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:you@email.com" class="contact-link">Email <span>↗</span></a>
+        <a href="https://linkedin.com/in/yourprofile" class="contact-link">LinkedIn <span>↗</span></a>
+        <a href="https://github.com/yourusername" class="contact-link">GitHub <span>↗</span></a>
+      </div>
+    </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© 2026 Juho Lahtinen</p>
+    <div class="footer-text">© 2026 Juho Lahtinen <span class="footer-dot">·</span> Lahti, Finland</div>
+    <div class="footer-text">Built with GitHub Pages</div>
   </footer>
 
 </body>
