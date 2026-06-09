@@ -1,24 +1,67 @@
 <!DOCTYPE html>
+<!--
+  DOCTYPE tells the browser: "this is modern HTML5, render it properly"
+  Without this, some browsers go into "quirks mode" and behave unexpectedly
+-->
 <html lang="en">
+<!--
+  lang="en" helps screen readers and search engines understand the language
+-->
+
 <head>
+  <!--
+    <head> is invisible to the user — it contains metadata and resource links
+    Nothing in here appears on the page directly
+  -->
+
+  <!-- UTF-8 lets you use special characters like é, ä, ö without breaking -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!--
+    viewport tells mobile browsers not to zoom out and show a tiny desktop site
+    width=device-width → match the device screen width
+    initial-scale=1.0 → don't zoom in or out at page load
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- This appears in the browser tab -->
   <title>Juho Lahtinen</title>
+
+  <!--
+    Link to our external CSS file. The browser loads this before rendering.
+    href is the path — "style.css" means "same folder as this HTML file"
+  -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
-  <!-- HEADER -->
+<body>
+  <!--
+    <body> is everything the user actually sees.
+    We structure it into semantic sections: header, main sections, footer.
+    "Semantic" means using elements whose names describe their purpose.
+  -->
+
+  <!-- =============================================
+    HEADER + NAVIGATION
+    The sticky bar at the top that stays visible when you scroll
+    ============================================= -->
   <header>
-    <div class="header-inner">
-      <img src="assets/profile.jpg" alt="Juho Lahtinen" class="profile-pic"/>
-      <div>
-        <h1>Juho Lahtinen</h1>
-        <p class="subtitle">Automation & Robotics Student · BioIT & Industrial Engineering</p>
-        <p class="location">📍 Espoo, Finland</p>
-      </div>
+    <div class="header-top">
+      <!--
+        This is just a name/brand. No profile pic yet — simpler to start.
+        We add the profile pic as a background-image later in CSS if you want.
+      -->
+      <span class="site-name">Juho Lahtinen</span>
     </div>
+
     <nav>
+      <!--
+        Navigation links. The key concept here is the anchor link:
+        href="#about" → jump to the element with id="about" on this page
+        
+        This is called a "hash link" or "fragment link". No page reload needed.
+        The smooth scrolling behavior is handled in our CSS.
+      -->
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
@@ -27,66 +70,155 @@
     </nav>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm an Automation and Robotics engineering student at Aalto University, with minors in 
-      BioIT and Industrial Engineering. Strong interest in
-      problem-solving. Adventurous and curious by
-      nature, with a practical mindset and a passion for
-      learning through real-world challenges.
-      
-    </p>
-  </section>
+  <!--
+    <main> wraps the primary content of the page.
+    Good for accessibility and SEO — search engines know this is the main content.
+  -->
+  <main>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">💻 Python</div>
-      <div class="skill-card">⚙️ C / C++</div>
-      <div class="skill-card">📊 Scala</div>
-      <div class="skill-card">🤖 CodeSys</div>
-      <div class="skill-card">🔬 Problem-solving</div>
-      <div class="skill-card">🏭 Industrial Engineering</div>
-    </div>
-  </section>
+    <!-- =============================================
+      ABOUT SECTION
+      id="about" is what the nav link #about points to
+      ============================================= -->
+    <section id="about">
+      <!--
+        The eyebrow label — a small styled prefix above the main heading.
+        We use aria-hidden="true" so screen readers skip this decorative text
+        and just read the h2 below.
+      -->
+      <span class="section-label" aria-hidden="true">/ about</span>
 
-  <!-- EDUCATION -->
-  <section id="education">
-    <h2>Education</h2>
-    <div class="edu-item">
-      <h3>B.Sc. Automation and Robotics</h3>
-      <p class="edu-sub">Aalto University · 2023 – Present</p>
-      <p>Minors in BioIT and Industrial Engineering</p>
-    </div>
-  </section>
+      <h2>Automation &amp; Robotics<br>Engineering Student</h2>
+      <!--
+        &amp; is the HTML "entity" for the & character.
+        In HTML, & starts special codes, so you write &amp; to display a literal &
+        Other common ones: &lt; = <, &gt; = >, &nbsp; = non-breaking space
+      -->
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Project Name TODO</h3>
-      <p>Short description of what you built and what technologies you used.</p>
-    </div>
-    <div class="project-card">
-      <h3>Project Name TODO</h3>
-      <p>Short description of what you built and what technologies you used.</p>
-    </div>
-  </section>
+      <p class="hero-sub">Minors in BioIT &amp; Industrial Engineering · Lahti, Finland</p>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:juholahtinen11@gmail.com">juholahtinen11@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/juho-lahtinen-913798351/" target="_blank">linkedin.com/in/juho-lahtinen-913798351/</a></p>
-    <p>GitHub: <a href="https://github.com/lahtinen-juho" target="_blank">github.com/lahtinen-juho</a></p>
-  </section>
+      <p class="about-text">
+        Curious by nature, practical by training. I build things at the
+        intersection of engineering and life sciences — from automation systems
+        to biomedical applications. Always learning through real-world challenges.
+      </p>
+    </section>
+
+    <!-- =============================================
+      SKILLS SECTION
+      ============================================= -->
+    <section id="skills">
+      <span class="section-label" aria-hidden="true">/ skills</span>
+      <h2>Skills</h2>
+
+      <div class="skills-grid">
+        <!--
+          Each skill is a <span> (inline element) styled as a "tag" or "pill".
+          We could use <ul><li> too — both are valid.
+          <span> is simpler here since these aren't really a list.
+        -->
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">C / C++</span>
+        <span class="skill-tag">Scala</span>
+        <span class="skill-tag">CodeSys</span>
+        <span class="skill-tag">WSL · Ubuntu</span>
+        <span class="skill-tag">Industrial Eng.</span>
+        <span class="skill-tag">BioIT</span>
+        <span class="skill-tag">Problem-solving</span>
+      </div>
+    </section>
+
+    <!-- =============================================
+      EDUCATION SECTION
+      ============================================= -->
+    <section id="education">
+      <span class="section-label" aria-hidden="true">/ education</span>
+      <h2>Education</h2>
+
+      <div class="edu-card">
+        <h3>B.Sc. Automation and Robotics</h3>
+        <!--
+          <p> = paragraph. It automatically gets top/bottom spacing.
+          We add a class to style certain paragraphs differently.
+        -->
+        <p class="edu-meta">Aalto University · 2023 – Present</p>
+        <p class="edu-minor">Minors: BioIT · Industrial Engineering</p>
+      </div>
+    </section>
+
+    <!-- =============================================
+      PROJECTS SECTION
+      ============================================= -->
+    <section id="projects">
+      <span class="section-label" aria-hidden="true">/ projects</span>
+      <h2>Projects</h2>
+
+      <!--
+        Each project is a card. Later you'll fill in real projects.
+        The structure (title + description) stays the same each time.
+      -->
+      <div class="project-card">
+        <h3>Project Name</h3>
+        <p>What you built, what problem it solved, what technologies you used.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Project Name</h3>
+        <p>What you built, what problem it solved, what technologies you used.</p>
+      </div>
+    </section>
+
+    <!-- =============================================
+      CONTACT SECTION
+      ============================================= -->
+    <section id="contact">
+      <span class="section-label" aria-hidden="true">/ contact</span>
+      <h2>Contact</h2>
+
+      <div class="contact-list">
+        <div class="contact-row">
+          <span class="contact-label">Email</span>
+          <!--
+            mailto: links open the user's email app when clicked.
+            target="_blank" opens links in a new tab (used for external URLs).
+            For mailto we don't use _blank — it opens the mail app, not a tab.
+          -->
+          <a href="mailto:juholahtinen11@gmail.com">juholahtinen11@gmail.com</a>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-label">LinkedIn</span>
+          <!--
+            rel="noopener noreferrer" is a security best practice for target="_blank".
+            Without it, the opened tab could technically access the original tab.
+          -->
+          <a href="https://www.linkedin.com/in/juho-lahtinen-913798351/"
+             target="_blank"
+             rel="noopener noreferrer">linkedin.com/in/juho-lahtinen</a>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-label">GitHub</span>
+          <a href="https://github.com/lahtinen-juho"
+             target="_blank"
+             rel="noopener noreferrer">github.com/lahtinen-juho</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
     <p>© 2026 Juho Lahtinen</p>
   </footer>
+
+  <!--
+    JavaScript goes at the END of the body, not in <head>.
+    Why? The browser reads HTML top-to-bottom. If JS is in <head>,
+    it runs before the page elements exist, so document.getElementById() finds nothing.
+    At the end of <body>, all elements are already loaded.
+  -->
+  <script src="script.js"></script>
 
 </body>
 </html>
